@@ -1,0 +1,22 @@
+# ===== Web 框架 =====
+fastapi==0.156.6          # 主框架，提供路由/校验/依赖注入
+uvicorn==0.54.0           # ASGI 服务器，本地 dev 用 --reload
+
+# ===== ORM & 数据库 =====
+SQLAlchemy==2.1.5         # ORM，本项目用 Query API（非 2.0 style）
+PyMySQL==1.2.3            # MySQL 驱动，SQLAlchemy 通过它连 MySQL
+
+# ===== 数据校验 =====
+pydantic==2.14.1          # 请求/响应模型、字段校验
+pydantic-settings==2.16.1 # .env 配置加载，SettingsConfigDict 读取 JSON 格式字段
+
+# ===== 配置 =====
+python-dotenv==1.2.4      # 让 pydantic-settings 能从 .env 文件读配置
+
+# ===== 认证 =====
+python-jose==3.5.0        # JWT 签发/解码（HS256 算法）
+passlib==1.7.4            # 密码哈希的统一接口层
+bcrypt==5.0.0             # passlib 后端，实际做哈希
+
+# ===== 其他 =====
+python-multipart==0.0.32  # FastAPI 表单/文件上传支持，本项目 import fastapi.security 时的间接依赖
